@@ -9,7 +9,7 @@ def generate_referral_code(length=8):
     Returns:
         A random string of uppercase letters and digits.
     """
-    parent_dir = os.path.dirname(os.getcwd())
+    parent_dir = os.path.dirname(os.path.dirname(__file__))
     logger = Logger(__name__, parent_dir).create_log_file()
     characters = string.ascii_uppercase + string.digits
     code = ''.join(random.choice(characters) for _ in range(length))
