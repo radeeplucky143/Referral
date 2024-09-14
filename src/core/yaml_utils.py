@@ -7,8 +7,9 @@ class Yaml:
     def __init__(self):
         self.parent_dir = os.path.dirname(os.path.dirname(__file__))
         self.file_name = os.path.join(self.parent_dir, 'config', 'config.yaml')
-        self.data = None
         self.logger = Logger(__name__, self.parent_dir).create_log_file()
+        self.data = None
+
 
     def load_yaml(self):
         try:
