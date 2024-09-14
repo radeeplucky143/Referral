@@ -27,7 +27,7 @@ class Referral:
 
         database = Database()
         values = (user.user_name, user.email, code)
-        insertion_cmd = self.config['database']['commands']['users_table_insertion'].format(values)
+        insertion_cmd = self.config['database']['commands']['users']['insertion'].format(values)
         database.execute(insertion_cmd)
         database.close_connection()
 
