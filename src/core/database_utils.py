@@ -15,9 +15,14 @@ class Database:
         self.logger.info(f"connection established to database {self.config['database']['name']}")
 
     def execute(self, command):
-        self.logger.info(f'Executing command: {command}')
-        self.cursor.execute(command)
-        self.conn.commit()
+        try:
+            self.logger.info(f'Executing command: {command}')
+            self.cursor.execute(command)
+            self.conn.commit()
+            self.logger.info("commiting to the database.")
+        except Exception as err:
+            self.logger.error(f"Execution failed while executing the command: {err}")
 
     def close_connection(self):
         self.conn.close()
+        self.logger.info("Connection to the database closed.")
