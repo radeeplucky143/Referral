@@ -2,4 +2,10 @@ points:
   season1: 4
   season2: 5
   season3: 6
-current_season: "season2
+current_season: "season1"
+database:
+  name: "database.db"
+  commands:
+    users:
+      insertion: 'INSERT INTO users (username, email, referral_code) VALUES {};'
+      
